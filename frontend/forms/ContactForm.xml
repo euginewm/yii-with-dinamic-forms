@@ -1,0 +1,69 @@
+<form>
+    <formOptions>
+        <!--<method>post</method>-->
+        <enableAjaxValidation>true</enableAjaxValidation>
+        <enableClientScript>true</enableClientScript>
+        <validateOnChange>true</validateOnChange>
+        <enctype>application/x-www-form-urlencoded</enctype>
+        <!--<enctype>multipart/form-data</enctype>-->
+        <formSubmitAction>ContactAction::run</formSubmitAction>
+    </formOptions>
+    <formItems>
+        <item>
+            <title>Name</title>
+            <name>name</name>
+            <type>textInput</type>
+            <validation>
+                <rule>required</rule>
+            </validation>
+        </item>
+
+        <item>
+            <title>Email</title>
+            <name>email</name>
+            <type>textInput</type>
+            <validation>
+                <rule>required</rule>
+                <rule>email</rule>
+            </validation>
+        </item>
+
+        <item>
+            <title>Subject</title>
+            <name>subject</name>
+            <type>textInput</type>
+            <HTMLAttributes>
+                <id>custom-input-id</id>
+            </HTMLAttributes>
+            <validation>
+                <rule>required</rule>
+            </validation>
+        </item>
+
+        <item>
+            <title>Body</title>
+            <name>body</name>
+            <type>textArea</type>
+            <HTMLAttributes>
+                <rows>6</rows>
+            </HTMLAttributes>
+            <validation>
+                <rule>required</rule>
+            </validation>
+        </item>
+
+        <item>
+            <title>Verify Code</title>
+            <name>verifyCode</name>
+            <type>widget</type>
+            <widgetCallback type="object" method="className">yii\captcha\Captcha</widgetCallback>
+            <widgetCallbackArguments>
+                <argument type="array" key="template" valueRender="template">//form-field/captcha</argument>
+            </widgetCallbackArguments>
+            <validation>
+                <rule>captcha</rule>
+            </validation>
+        </item>
+
+    </formItems>
+</form>

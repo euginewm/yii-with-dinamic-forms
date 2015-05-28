@@ -1,0 +1,37 @@
+<form>
+    <formOptions>
+        <method>post</method>
+        <enableAjaxValidation>true</enableAjaxValidation>
+        <enableClientScript>true</enableClientScript>
+        <validateOnChange>true</validateOnChange>
+        <formSubmitAction>SignupAction::run</formSubmitAction>
+    </formOptions>
+    <formItems>
+        <item>
+            <title>Username</title>
+            <name>username</name>
+            <type>textInput</type>
+            <validation>
+                <rule>required</rule>
+                <rule min="2" max="255">string</rule>
+                <rule targetClass="\common\models\User"
+                      message="This username has already been taken.">unique
+                </rule>
+            </validation>
+        </item>
+
+        <item>
+            <title>Email</title>
+            <name>email</name>
+            <type>textInput</type>
+            <validation>
+                <rule>required</rule>
+                <rule>email</rule>
+                <rule targetClass="\common\models\User"
+                      message="This email address has already been taken.">unique
+                </rule>
+                <rule filter="trim">filter</rule>
+            </validation>
+        </item>
+    </formItems>
+</form>

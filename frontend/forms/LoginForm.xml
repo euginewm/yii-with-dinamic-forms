@@ -1,0 +1,37 @@
+<form>
+    <formOptions>
+        <enableAjaxValidation>true</enableAjaxValidation>
+        <enableClientScript>true</enableClientScript>
+        <validateOnChange>true</validateOnChange>
+        <enctype>application/x-www-form-urlencoded</enctype>
+    </formOptions>
+    <formItems>
+        <item>
+            <title>Username</title>
+            <name>username</name>
+            <type>textInput</type>
+            <validation>
+                <rule>required</rule>
+            </validation>
+        </item>
+
+        <item>
+            <title>Password</title>
+            <name>password</name>
+            <type>passwordInput</type>
+            <validation>
+                <rule>required</rule>
+                <!--rule>validatePassword</rule-->
+            </validation>
+        </item>
+
+        <item>
+            <title>Remember Me</title>
+            <name>rememberMe</name>
+            <type>checkbox</type>
+            <validation>
+                <rule>boolean</rule>
+            </validation>
+        </item>
+    </formItems>
+</form>
